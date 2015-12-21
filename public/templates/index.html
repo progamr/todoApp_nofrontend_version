@@ -1,0 +1,12 @@
+<div ng-controller="todosController as model">
+<h2>List</h2>
+  <div ng-show="model.failedLoad" class="alert-danger">failed to load todos</div>
+  <div ng-show="model.failedDelete" class="alert-danger">failed to todo todo</div>
+  <div ng-show="model.deletedSucceffully" class="alert-success">successfully deleted todo</div>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="todo in model.todos">
+    <a href="#/todos/{{todo.id}}">{{todo.title}}</a>
+    <a href="#" ng-click="model.deleteTodo(todo.id, $index)"><span class="pull-right glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+  </li>
+</ul>
+</div>

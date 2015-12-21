@@ -1,0 +1,19 @@
+<div ng-controller="todosController as model">
+<h2>Creat New Item</h2>
+  <div ng-show="model.failedAdd" class="alert-danger">failed to add new item</div>
+  <div ng-show="model.addedSuccessfully" class="alert-success">the new item was added successfully</div>
+<form ng-submit="model.addTodo(model.todo)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input ng-model="model.todo.title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Title">
+    <span ng-if="model.failedAdd" class="alert-danger">{{model.errors.title[0]}}</span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Body</label>
+    <textarea ng-model="model.todo.body" class="form-control" rows="3" placeholder="Body"></textarea>
+    <span ng-if="model.failedAdd" class="alert-danger">{{model.errors.body[0]}}</span>
+  </div>
+  <button type="submit" class="btn btn-primary">Creat</button>
+</form>
+</div>
+

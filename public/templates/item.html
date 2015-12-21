@@ -1,0 +1,6 @@
+<div ng-controller="todoController as model">
+  <div ng-show="model.failedAdd" class="alert-danger">failed to add new item</div>
+  <div ng-show="model.notFound" class="alert-danger">the todo item you are looking for was not found!</div>
+  <h2 ng-if="!model.notFound">{{model.todo.title}}<a href="#/todos/{{model.todo.id}}/edit"><span class="pull-right glyphicon glyphicon-pencil" aria-hidden="true"></span></a></h2>
+  <p ng-if="!model.notFound">{{model.todo.body}}</p>
+  </div>
